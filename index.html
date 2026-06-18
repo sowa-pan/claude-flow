@@ -133,9 +133,9 @@
 <ul>
 <li><a href="#はじめに">はじめに</a>
 </li>
-<li><a href="#つのclaudeを使い分けるclaude.ai-cowork-claude-code">1. 3つのClaudeを使い分ける（Claude.ai / Cowork / Claude Code）</a>
+<li><a href="#つのclaudeを使い分けるclaude.ai-cowork-claude-code">1.5. 3つのClaudeを使い分ける（Claude.ai / Cowork / Claude Code）</a>
 </li>
-<li><a href="#主要aiツールの比較">1.5. 主要AIツールの比較</a></li>
+<li><a href="#主要aiツールの比較">1. 主要AIツールの比較</a></li>
 <li><a href="#自分と自社をaiに教える基本設定claude.md">2. 自分と自社をAIに教える（基本設定・CLAUDE.md）</a>
 </li>
 <li><a href="#作業に合わせてaiを切り替えるモデルの使い分け">3. 作業に合わせてAIを切り替える（モデルの使い分け）</a>
@@ -192,7 +192,72 @@
 <li><strong>レベル3</strong>　MCP連携して、複数のAIをつなげて自動化している → エンジニアの領域</li>
 </ul>
 <hr/>
-<h2 id="つのclaudeを使い分けるclaude.ai-cowork-claude-code">1. 3つのClaudeを使い分ける（Claude.ai / Cowork / Claude Code）</h2>
+<h2 id="主要aiツールの比較">1. 主要AIツールの比較</h2>
+<p>「AI」と一口に言っても、ツールごとに得意分野と弱点が異なる。用途に合わせて使い分けることが重要。</p>
+<table>
+<colgroup>
+<col style="width: 15%"/>
+<col style="width: 28%"/>
+<col style="width: 28%"/>
+<col style="width: 29%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>ツール</th>
+<th>強み</th>
+<th>弱み</th>
+<th>向いている用途</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Claude</strong>（Anthropic）</td>
+<td>長文の読解・執筆精度が高い。指示への忠実さ。コンテキスト保持が得意。エージェント・MCP連携が充実</td>
+<td>画像生成不可。リアルタイム情報は取得できない（接続なしの場合）。真面目で融通が利かないことがある。文体が硬め。安全性を重視するあまり依頼を断ることがある</td>
+<td>原稿執筆・編集・長文要約・スキル自動化・エージェント構築</td>
+</tr>
+<tr class="even">
+<td><strong>ChatGPT</strong>（OpenAI）</td>
+<td>ブラウザ操作・コード実行・画像生成（DALL-E）が統合されている。ユーザー数が多くノウハウが豊富</td>
+<td>長文の一貫性がやや落ちる場合がある。APIコストが高め。指示を独自解釈して勝手に動くことがある。褒めてから答える「お世辞」が多く、批判的な意見を言いにくい</td>
+<td>コード生成・画像生成・ブラウザ操作を含む自動化</td>
+</tr>
+<tr class="odd">
+<td><strong>Gemini</strong>（Google）</td>
+<td>コンテキストウィンドウが最大200万トークンと圧倒的に大きい。動画・音声を直接扱える。Google系ツールとの連携が強い</td>
+<td>情報を要約・圧縮しすぎる傾向がある。事実を脚色・誇張することがあり、ハルシネーション（事実誤認）に注意が必要</td>
+<td>大量ドキュメントの一括処理・動画・音声の分析・Google Workspace連携</td>
+</tr>
+<tr class="even">
+<td><strong>Grok</strong>（xAI）</td>
+<td>X（旧Twitter）のリアルタイム情報にアクセスできる。トレンド把握が得意</td>
+<td>日本語対応や精度はまだ発展途上。エコシステムが限定的。制限が少ない分、出力の質にばらつきがある</td>
+<td>SNSトレンド調査・最新ニュースのリサーチ</td>
+</tr>
+<tr class="even">
+<td><strong>NotebookLM</strong>（Google）</td>
+<td>ドキュメントをソースとして登録し、その範囲内で正確に回答する。ハルシネーションが少ない。複数資料の横断検索・要約が得意。ポッドキャスト生成など独自機能もある</td>
+<td>ソース外の情報は答えられない。執筆・自動化には不向き。事前にドキュメントをアップロードする手間がある</td>
+<td>大量の参考資料の読み込み・Q&amp;A・要約。媒体レファレンスや取材資料の整理</td>
+</tr>
+<tr class="odd">
+<td><strong>Genspark</strong></td>
+<td>リサーチ特化。複数ソースを横断して情報を収集・整理するのが得意。スパークページとして見やすくまとめる</td>
+<td>執筆・編集・自動化には不向き。出力形式がリサーチレポートに限定される。情報源が不透明なことがある</td>
+<td>取材前のリサーチ・競合調査・テーマの全体像把握</td>
+</tr>
+</tbody>
+</table>
+<h3 id="使い分けの基本方針">使い分けの基本方針</h3>
+<ul>
+<li>執筆・編集・自動化の基盤 → <strong>Claude</strong></li>
+<li>大量ドキュメントの処理・動画音声の分析 → <strong>Gemini</strong></li>
+<li>コード生成・画像生成を含む自動化 → <strong>ChatGPT</strong></li>
+<li>SNSトレンド・リアルタイム情報 → <strong>Grok</strong></li>
+<li>取材前のリサーチ・テーマ調査 → <strong>Genspark</strong></li>
+<li>大量資料の読み込み・Q&amp;A・整理 → <strong>NotebookLM</strong></li>
+</ul><hr/>
+<h2 id="つのclaudeを使い分けるclaude.ai-cowork-claude-code">1.5. 3つのClaudeを使い分ける（Claude.ai / Cowork / Claude Code）</h2>
 <p>Claudeには3つの入口がある。中身は同じAIでも、入口ごとに使える道具と得意分野が変わる。一人の人物が場面ごとに違う顔を見せる、多重人格のようなイメージ。</p>
 <h3 id="製品の比較">1-1. 3製品の比較</h3>
 <table>
@@ -364,72 +429,7 @@
 </tr>
 </tbody>
 </table>
-<hr/>
-<h2 id="主要aiツールの比較">1.5. 主要AIツールの比較</h2>
-<p>「AI」と一口に言っても、ツールごとに得意分野と弱点が異なる。用途に合わせて使い分けることが重要。</p>
-<table>
-<colgroup>
-<col style="width: 15%"/>
-<col style="width: 28%"/>
-<col style="width: 28%"/>
-<col style="width: 29%"/>
-</colgroup>
-<thead>
-<tr class="header">
-<th>ツール</th>
-<th>強み</th>
-<th>弱み</th>
-<th>向いている用途</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Claude</strong>（Anthropic）</td>
-<td>長文の読解・執筆精度が高い。指示への忠実さ。コンテキスト保持が得意。エージェント・MCP連携が充実</td>
-<td>画像生成不可。リアルタイム情報は取得できない（接続なしの場合）。真面目で融通が利かないことがある。文体が硬め。安全性を重視するあまり依頼を断ることがある</td>
-<td>原稿執筆・編集・長文要約・スキル自動化・エージェント構築</td>
-</tr>
-<tr class="even">
-<td><strong>ChatGPT</strong>（OpenAI）</td>
-<td>ブラウザ操作・コード実行・画像生成（DALL-E）が統合されている。ユーザー数が多くノウハウが豊富</td>
-<td>長文の一貫性がやや落ちる場合がある。APIコストが高め。指示を独自解釈して勝手に動くことがある。褒めてから答える「お世辞」が多く、批判的な意見を言いにくい</td>
-<td>コード生成・画像生成・ブラウザ操作を含む自動化</td>
-</tr>
-<tr class="odd">
-<td><strong>Gemini</strong>（Google）</td>
-<td>コンテキストウィンドウが最大200万トークンと圧倒的に大きい。動画・音声を直接扱える。Google系ツールとの連携が強い</td>
-<td>情報を要約・圧縮しすぎる傾向がある。事実を脚色・誇張することがあり、ハルシネーション（事実誤認）に注意が必要</td>
-<td>大量ドキュメントの一括処理・動画・音声の分析・Google Workspace連携</td>
-</tr>
-<tr class="even">
-<td><strong>Grok</strong>（xAI）</td>
-<td>X（旧Twitter）のリアルタイム情報にアクセスできる。トレンド把握が得意</td>
-<td>日本語対応や精度はまだ発展途上。エコシステムが限定的。制限が少ない分、出力の質にばらつきがある</td>
-<td>SNSトレンド調査・最新ニュースのリサーチ</td>
-</tr>
-<tr class="even">
-<td><strong>NotebookLM</strong>（Google）</td>
-<td>ドキュメントをソースとして登録し、その範囲内で正確に回答する。ハルシネーションが少ない。複数資料の横断検索・要約が得意。ポッドキャスト生成など独自機能もある</td>
-<td>ソース外の情報は答えられない。執筆・自動化には不向き。事前にドキュメントをアップロードする手間がある</td>
-<td>大量の参考資料の読み込み・Q&amp;A・要約。媒体レファレンスや取材資料の整理</td>
-</tr>
-<tr class="odd">
-<td><strong>Genspark</strong></td>
-<td>リサーチ特化。複数ソースを横断して情報を収集・整理するのが得意。スパークページとして見やすくまとめる</td>
-<td>執筆・編集・自動化には不向き。出力形式がリサーチレポートに限定される。情報源が不透明なことがある</td>
-<td>取材前のリサーチ・競合調査・テーマの全体像把握</td>
-</tr>
-</tbody>
-</table>
-<h3 id="使い分けの基本方針">使い分けの基本方針</h3>
-<ul>
-<li>執筆・編集・自動化の基盤 → <strong>Claude</strong></li>
-<li>大量ドキュメントの処理・動画音声の分析 → <strong>Gemini</strong></li>
-<li>コード生成・画像生成を含む自動化 → <strong>ChatGPT</strong></li>
-<li>SNSトレンド・リアルタイム情報 → <strong>Grok</strong></li>
-<li>取材前のリサーチ・テーマ調査 → <strong>Genspark</strong></li>
-<li>大量資料の読み込み・Q&amp;A・整理 → <strong>NotebookLM</strong></li>
-</ul>
+
 <h2 id="自分と自社をaiに教える基本設定claude.md">2. 自分と自社をAIに教える（基本設定・CLAUDE.md）</h2>
 <p>導入後、最初に行うべき作業。プロンプトの工夫より先に、自分が何者でどんなルールで仕事をしているかを設定として書く。一度書けば毎回のやりとりが短く正確になる。設定は「指示の貯金」。</p>
 <h3 id="設定の3層構造">2-1. 設定の3層構造</h3>

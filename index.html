@@ -112,7 +112,7 @@
     #TOC a:hover { color: var(--accent); text-decoration: underline; }
     a { color: var(--accent); }
     @media (max-width: 680px) { table { display: block; overflow-x: auto; white-space: nowrap; } body { padding: 28px 16px; } }
-    @media print { body { padding: 0; font-size: 11pt; max-width: none; } h1, h2 { break-after: avoid; } pre, table, svg, blockquote { break-inside: avoid; } }
+    @media print { body { padding: 0; font-size: 11pt; max-width: none; } h1, h2 { break-after: avoid; } pre, table, svg, blockquote { break-inside: avoid; } details { display: block !important; } details > * { display: block !important; } summary::before { content: "" !important; } }
     
     details { border: 1px solid var(--line); border-radius: 6px; margin: 1em 0; background: #fafbfc; }
     details[open] { background: #fff; }

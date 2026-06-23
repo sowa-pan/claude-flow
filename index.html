@@ -497,34 +497,41 @@
 <span id="cb1-12"><a aria-hidden="true" href="#cb1-12"></a></span>
 <span id="cb1-13"><a aria-hidden="true" href="#cb1-13"></a><span class="fu"># Brand Voice</span></span>
 <span id="cb1-14"><a aria-hidden="true" href="#cb1-14"></a><span class="ss">- </span>媒体指定がある場合はそちらのトンマナ優先</span>
-<span id="cb1-15"><a aria-hidden="true" href="#cb1-15"></a><span class="ss">- </span>ですます調では文末を敬体か体言止め中心にし、常体は少なめに抑える</span>
-<span id="cb1-16"><a aria-hidden="true" href="#cb1-16"></a><span class="ss">- </span>同じ文末表現を連続させない。体言止め・倒置・言い換えでリズムをつける</span>
-<span id="cb1-17"><a aria-hidden="true" href="#cb1-17"></a><span class="ss">- </span>見出し・本文に「——」を多用しない</span>
-<span id="cb1-18"><a aria-hidden="true" href="#cb1-18"></a><span class="ss">- </span>根拠なく「興味深い」「重要な示唆」などの評価語を使わない</span>
-<span id="cb1-19"><a aria-hidden="true" href="#cb1-19"></a><span class="ss">- </span>「結論から言うと」などの前置き宣言を入れない</span>
-<span id="cb1-20"><a aria-hidden="true" href="#cb1-20"></a><span class="ss">- </span>締めの定型句（参考になれば幸いです、など）を入れない</span>
-<span id="cb1-21"><a aria-hidden="true" href="#cb1-21"></a><span class="ss">- </span>「」（）を多用しない。補足は本文に組み込む</span>
-<span id="cb1-22"><a aria-hidden="true" href="#cb1-22"></a><span class="ss">- </span>文字数目安が指定されていれば±10%以内に収める</span>
-<span id="cb1-23"><a aria-hidden="true" href="#cb1-23"></a></span>
-<span id="cb1-24"><a aria-hidden="true" href="#cb1-24"></a><span class="fu"># Design</span></span>
-<span id="cb1-25"><a aria-hidden="true" href="#cb1-25"></a><span class="ss">- </span>シンプル・ミニマル優先。装飾より余白と構造で読みやすさを出す</span>
-<span id="cb1-26"><a aria-hidden="true" href="#cb1-26"></a><span class="ss">- </span>表は必要なときだけ使う</span>
-<span id="cb1-27"><a aria-hidden="true" href="#cb1-27"></a><span class="ss">- </span>Word文書の見出し階層はH1・H2中心</span>
-<span id="cb1-28"><a aria-hidden="true" href="#cb1-28"></a></span>
-<span id="cb1-29"><a aria-hidden="true" href="#cb1-29"></a><span class="fu"># Thread Management</span></span>
-<span id="cb1-30"><a aria-hidden="true" href="#cb1-30"></a><span class="ss">- </span>スレッドが重くなったり複数案件が混在したら「そろそろスレッドが重くなってきました。新しいスレッドに移りましょうか？」と声をかけ、引き継ぎメモを作成する</span>
-<span id="cb1-31"><a aria-hidden="true" href="#cb1-31"></a></span>
-<span id="cb1-32"><a aria-hidden="true" href="#cb1-32"></a><span class="fu"># Prompt Technique</span></span>
-<span id="cb1-33"><a aria-hidden="true" href="#cb1-33"></a><span class="ss">- </span>スキル修正・改善依頼は2段構成で対話する</span>
-<span id="cb1-34"><a aria-hidden="true" href="#cb1-34"></a><span class="ss">  1. </span>問題点の指摘：現状の何が問題か・なぜ変えるかを1〜2文で確認する</span>
-<span id="cb1-35"><a aria-hidden="true" href="#cb1-35"></a><span class="ss">  2. </span>改善案への問い返し：「では〜という方向でよいですか？」と方向性を提示し、承認を得てから実装する</span>
-<span id="cb1-36"><a aria-hidden="true" href="#cb1-36"></a><span class="ss">- </span>この2段構成で認識ずれを事前につぶし、往復回数を減らす</span>
-<span id="cb1-37"><a aria-hidden="true" href="#cb1-37"></a></span>
-<span id="cb1-38"><a aria-hidden="true" href="#cb1-38"></a><span class="fu">## fable モデル使用時のトークン節約ルール</span></span>
-<span id="cb1-39"><a aria-hidden="true" href="#cb1-39"></a><span class="ss">- </span>タスクをフェーズ分割してサブエージェントに委譲する</span>
-<span id="cb1-40"><a aria-hidden="true" href="#cb1-40"></a><span class="ss">- </span>fable：執筆・構成判断・設計／Sonnet 4.6：QC・Web検索・調査・構造化</span>
-<span id="cb1-41"><a aria-hidden="true" href="#cb1-41"></a><span class="ss">- </span>コンテキストは必要最小限に絞り、該当セクションだけ渡す</span>
-<span id="cb1-42"><a aria-hidden="true" href="#cb1-42"></a><span class="ss">- </span>中間成果物はファイルに保存し、ファイル経由で次のサブエージェントへ引き継ぐ</span></code></pre></div>
+<span id="cb1-15"><a aria-hidden="true" href="#cb1-15"></a><span class="ss">- </span>ですます調では文末は敬体・体言止め・倒置を組み合わせてリズムをつける。同じ文末表現を連続させない</span>
+<span id="cb1-16"><a aria-hidden="true" href="#cb1-16"></a><span class="ss">- </span>「——」はQA形式の質問行冒頭以外は使わない</span>
+<span id="cb1-17"><a aria-hidden="true" href="#cb1-17"></a><span class="ss">- </span>（）を多用しない。補足は本文に組み込む</span>
+<span id="cb1-18"><a aria-hidden="true" href="#cb1-18"></a><span class="ss">- </span>主語と述語を必ず一致させる。ねじれは修正する</span>
+<span id="cb1-19"><a aria-hidden="true" href="#cb1-19"></a><span class="ss">- </span>短文を連続させてぶつ切りにしない。内容のつながりがある文は統合してリズムをつくる</span>
+<span id="cb1-20"><a aria-hidden="true" href="#cb1-20"></a><span class="ss">- </span>一文一義を守る。一文に複数の事柄を詰め込まない</span>
+<span id="cb1-21"><a aria-hidden="true" href="#cb1-21"></a><span class="ss">- </span>形式名詞「こと」「もの」「という」を多用しない</span>
+<span id="cb1-22"><a aria-hidden="true" href="#cb1-22"></a><span class="ss">- </span>受動態を連続させない。能動態に変換できるものは変換する</span>
+<span id="cb1-23"><a aria-hidden="true" href="#cb1-23"></a><span class="ss">- </span>空締め禁止（「〜していく」「それこそが〜です」など余韻だけの文を置かない）</span>
+<span id="cb1-24"><a aria-hidden="true" href="#cb1-24"></a><span class="ss">- </span>文字数指定がある場合は±10%以内を目標とする</span>
+<span id="cb1-25"><a aria-hidden="true" href="#cb1-25"></a></span>
+<span id="cb1-26"><a aria-hidden="true" href="#cb1-26"></a><span class="fu"># Heading</span></span>
+<span id="cb1-27"><a aria-hidden="true" href="#cb1-27"></a><span class="ss">- </span>一見出し一要素。複数の内容を「と」「・」でつないで詰め込まない</span>
+<span id="cb1-28"><a aria-hidden="true" href="#cb1-28"></a><span class="ss">- </span>セクションで触れる内容か、最も印象的なポイントが一読でわかる言葉を選ぶ</span>
+<span id="cb1-29"><a aria-hidden="true" href="#cb1-29"></a><span class="ss">- </span>「〜について」「〜とは」「〜の重要性」など汎用フレーズは避ける</span>
+<span id="cb1-30"><a aria-hidden="true" href="#cb1-30"></a></span>
+<span id="cb1-31"><a aria-hidden="true" href="#cb1-31"></a><span class="fu"># Design</span></span>
+<span id="cb1-32"><a aria-hidden="true" href="#cb1-32"></a><span class="ss">- </span>シンプル・ミニマル優先。装飾より余白と構造で読みやすさを出す</span>
+<span id="cb1-33"><a aria-hidden="true" href="#cb1-33"></a><span class="ss">- </span>表は必要なときだけ使う</span>
+<span id="cb1-34"><a aria-hidden="true" href="#cb1-34"></a><span class="ss">- </span>Word文書の見出し階層はH1・H2中心</span>
+<span id="cb1-35"><a aria-hidden="true" href="#cb1-35"></a></span>
+<span id="cb1-36"><a aria-hidden="true" href="#cb1-36"></a><span class="fu"># Thread Management</span></span>
+<span id="cb1-37"><a aria-hidden="true" href="#cb1-37"></a><span class="ss">- </span>スレッドが重くなったり複数案件が混在したら「そろそろスレッドが重くなってきました。新しいスレッドに移りましょうか？」と声をかけ、引き継ぎメモを作成する</span>
+<span id="cb1-38"><a aria-hidden="true" href="#cb1-38"></a></span>
+<span id="cb1-39"><a aria-hidden="true" href="#cb1-39"></a><span class="fu"># Prompt Technique</span></span>
+<span id="cb1-40"><a aria-hidden="true" href="#cb1-40"></a><span class="ss">- </span>スキル修正・改善依頼は2段構成で対話する</span>
+<span id="cb1-41"><a aria-hidden="true" href="#cb1-41"></a><span class="ss">  1. </span>問題点の指摘：現状の何が問題か・なぜ変えるかを1〜2文で確認する</span>
+<span id="cb1-42"><a aria-hidden="true" href="#cb1-42"></a><span class="ss">  2. </span>改善案への問い返し：「では〜という方向でよいですか？」と方向性を提示し、承認を得てから実装する</span>
+<span id="cb1-43"><a aria-hidden="true" href="#cb1-43"></a><span class="ss">- </span>この2段構成で認識ずれを事前につぶし、往復回数を減らす</span>
+<span id="cb1-44"><a aria-hidden="true" href="#cb1-44"></a></span>
+<span id="cb1-45"><a aria-hidden="true" href="#cb1-45"></a><span class="fu">## fable モデル使用時のトークン節約ルール</span></span>
+<span id="cb1-46"><a aria-hidden="true" href="#cb1-46"></a><span class="ss">- </span>タスクをフェーズ分割してサブエージェントに委譲する</span>
+<span id="cb1-47"><a aria-hidden="true" href="#cb1-47"></a><span class="ss">- </span>fable：執筆・構成判断・設計／Sonnet 4.6：QC・Web検索・調査・構造化</span>
+<span id="cb1-48"><a aria-hidden="true" href="#cb1-48"></a><span class="ss">- </span>コンテキストは必要最小限に絞り、該当セクションだけ渡す</span>
+<span id="cb1-49"><a aria-hidden="true" href="#cb1-49"></a><span class="ss">- </span>中間成果物はファイルに保存し、ファイル経由で次のサブエージェントへ引き継ぐ</span></code></pre></div>
 <h3 id="各項目の役割と効果">3-3. 各項目の役割と効果</h3>
 <table>
 <thead>
